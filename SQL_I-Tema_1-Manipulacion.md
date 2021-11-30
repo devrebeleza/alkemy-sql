@@ -13,7 +13,7 @@
         CODIGO INT NOT NULL,
         NOMBRE VARCHAR(155) NOT NULL,
         DESCRIPCION VARCHAR (255),
-        TURNO INT NOT NULL,
+        TURNO VARCHAR (15) NOT NULL,
         PRIMARY KEY (CODIGO)
     )
   ```
@@ -36,7 +36,25 @@
     INSERT INTO CURSO (CODIGO,DESCRIPCION,TURNO,CUPO) VALUES (
     '103',  'Computación Gráfica',  'Tarde',  '30'); 
 ```
-![Error SQL](https://drive.google.com/file/d/1g--3iDDtd3fcmVLcJql5BXOQz8MJtEsr/view)
+![Error Nombre Null](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/error_insert_sql.PNG)
+
 5- Intente ingresar un registro con la clave primaria repetida y verifique que no funciona.
+```sql
+    INSERT INTO CURSO (CODIGO,NOMBRE,DESCRIPCION,TURNO,CUPO) 
+    VALUES ('102', 'Informática', 'Computación Gráfica',  'Tarde',  '30'); 
+```  
+![Error Código repetido](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/error_insert_cod_repetido_sql.PNG)
+
 6- Actualice, para todos los cursos, el cupo en 25.
+```SQL
+    UPDATE CURSO SET CUPO = 25;
+```
+
 7- Elimine el curso Algoritmos.
+```SQL
+  --opción 1
+    DELETE FROM CURSO WHERE NOMBRE = 'Algoritmos';
+  --opción 2
+    DELETE FROM CURSO WHERE NOMBRE LIKE '%Algoritmos%';
+```
+
