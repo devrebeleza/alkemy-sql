@@ -8,57 +8,42 @@ Dada la tabla:\
 PROFESOR\
 ![Tabla](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/tabla_profesor.PNG)
 
-1-  Cree una tabla llamada CURSO con los atributos: 
-  - Código de curso (clave primaria, entero no nulo) 
-  - Nombre (varchar no nulo) 
-  - Descripcion (varcha) 
-  - Turno (varchar no nulo) 
+### Para cada caso, escriba la consulta correspondiente:
+
+1- Nombre, apellido y fecha de nacimiento de todos los empleados, ordenado por fecha de nacimiento ascendente.
   ```sql
-    CREATE TABLE CURSO (
-        CODIGO INT NOT NULL,
-        NOMBRE VARCHAR(155) NOT NULL,
-        DESCRIPCION VARCHAR (255),
-        TURNO VARCHAR (15) NOT NULL,
-        PRIMARY KEY (CODIGO)
-    )
+    SELECT nombre, apellido, fecha_nacimiento 
+    FROM PROFESOR
+    ORDER BY fecha_nacimiento
   ```
-2- Agregue un campo “cupo” de tipo numérico
+2- Todos los profesores cuyo salario sea mayor o igual a 65000.
  ```sql 
-    ALTER TABLE CURSO ADD CUPO INT;
+    SELECT * from PROFESOR WHERE salario >=65000
  ```
-3- Inserte datos en la tabla:
-  - (101, “Algoritmos”,”Algoritmos y Estructuras de Datos”,”Mañana”,35)
-  - (102, “Matemática Discreta”,””,”Tarde”,30)
+3- Todos los profesores que nacieron en la década del 80.   
 ```sql
  --opción 1
-    INSERT INTO CURSO (CODIGO,NOMBRE,DESCRIPCION,TURNO,CUPO) 
-    VALUES ('101','Algoritmos','Algoritmos y Estructuras de Datos','Mañana','35'); 
-  --opción 2
-    INSERT INTO CURSO VALUES ('102','Matemática Discreta','','Tarde','35');
+    SELECT * FROM PROFESOR WHERE fecha_nacimiento BETWEEN 1980-01-01 and 1980-12-31
+--opción 2
+    SELECT * FROM PROFESOR WHERE fecha_nacimiento >= 1980-01-01 and  fecha_nacimiento <= 1980-12-31
+--opción 3 - MySQL - ORACLE - PostgreSQL
+    SELECT * FROM PROFESOR WHERE extract( year FROM fecha_nacimiento) = 1980
 ```
-4- Intente ingresar un registro con el nombre nulo y verifique que no funciona.
-```sql
-    INSERT INTO CURSO (CODIGO,DESCRIPCION,TURNO,CUPO) VALUES (
-    '103',  'Computación Gráfica',  'Tarde',  '30'); 
-```
-![Error Nombre Null](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/error_insert_sql.PNG)
 
-5- Intente ingresar un registro con la clave primaria repetida y verifique que no funciona.
+4- (5) registros
 ```sql
-    INSERT INTO CURSO (CODIGO,NOMBRE,DESCRIPCION,TURNO,CUPO) 
-    VALUES ('102', 'Informática', 'Computación Gráfica',  'Tarde',  '30'); 
+    SELECT * FROM PROFESOR LIMIT 5;
+```
+
+
+5- Todos los profesores cuyo apellido inicie con la letra “P”
+```sql
+   SELECT * FROM PROFESOR WHERE apellido like 'P%' ;
 ```  
 ![Error Código repetido](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/error_insert_cod_repetido_sql.PNG)
 
-6- Actualice, para todos los cursos, el cupo en 25.
+6- Los profesores que nacieron en la década del 80 y tienen un salario mayor a 80000
 ```SQL
     UPDATE CURSO SET CUPO = 25;
 ```
 
-7- Elimine el curso Algoritmos.
-```SQL
-  --opción 1
-    DELETE FROM CURSO WHERE NOMBRE = 'Algoritmos';
-  --opción 2
-    DELETE FROM CURSO WHERE NOMBRE LIKE '%Algoritmos%';
-```
