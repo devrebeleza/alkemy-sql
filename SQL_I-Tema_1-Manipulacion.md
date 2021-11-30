@@ -36,14 +36,14 @@
     INSERT INTO CURSO (CODIGO,DESCRIPCION,TURNO,CUPO) VALUES (
     '103',  'Computación Gráfica',  'Tarde',  '30'); 
 ```
-![Error Nombre Null](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/error_insert_sql.PNG)
+![Error Nombre Null](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/error_insert_sql.PNG)
 
 5- Intente ingresar un registro con la clave primaria repetida y verifique que no funciona.
 ```sql
     INSERT INTO CURSO (CODIGO,NOMBRE,DESCRIPCION,TURNO,CUPO) 
     VALUES ('102', 'Informática', 'Computación Gráfica',  'Tarde',  '30'); 
 ```  
-![Error Código repetido](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/error_insert_cod_repetido_sql.PNG)
+![Error Código repetido](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/error_insert_cod_repetido_sql.PNG)
 
 6- Actualice, para todos los cursos, el cupo en 25.
 ```SQL
