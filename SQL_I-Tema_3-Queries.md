@@ -18,7 +18,7 @@ PROFESOR\
   ```
 2- Todos los profesores cuyo salario sea mayor o igual a 65000.
  ```sql 
-    SELECT * from PROFESOR WHERE salario >=65000
+    SELECT * from PROFESOR WHERE salario >= 65000;
  ```
 3- Todos los profesores que nacieron en la década del 80.   
 ```sql
@@ -40,10 +40,11 @@ PROFESOR\
 ```sql
    SELECT * FROM PROFESOR WHERE apellido like 'P%' ;
 ```  
-![Error Código repetido](https://raw.githubusercontent.com/devrebeleza/alkemy-sql/main/images/error_insert_cod_repetido_sql.PNG)
 
 6- Los profesores que nacieron en la década del 80 y tienen un salario mayor a 80000
 ```SQL
-    UPDATE CURSO SET CUPO = 25;
+    SELECT * FROM PROFESOR 
+    WHERE extract( year FROM fecha_nacimiento) = 1980
+    AND salario > 80000;
 ```
 
