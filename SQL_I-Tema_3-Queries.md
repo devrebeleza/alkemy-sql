@@ -23,9 +23,9 @@ PROFESOR\
 3- Todos los profesores que nacieron en la década del 80.   
 ```sql
  --opción 1
-    SELECT * FROM PROFESOR WHERE fecha_nacimiento BETWEEN 1980-01-01 and 1989-12-31
+    SELECT * FROM PROFESOR WHERE fecha_nacimiento BETWEEN '1980-01-01' and '1989-12-31'
 --opción 2
-    SELECT * FROM PROFESOR WHERE fecha_nacimiento >= 1980-01-01 and  fecha_nacimiento <= 1989-12-31
+    SELECT * FROM PROFESOR WHERE fecha_nacimiento >= '1980-01-01' and  fecha_nacimiento <= '1989-12-31'
 --opción 3 - MySQL - ORACLE - PostgreSQL
     SELECT * FROM PROFESOR WHERE extract( year FROM fecha_nacimiento) between 1980 and 1989
 ```
