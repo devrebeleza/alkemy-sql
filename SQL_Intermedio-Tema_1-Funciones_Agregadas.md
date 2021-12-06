@@ -30,25 +30,25 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
 4- Escriba las siguientes consultas:
  - Cantidad de pasajeros por país
 ```sql
- -- 1
     SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
     FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
     GROUP BY c.nombre
 ```    
  - Suma de todos los pagos realizados
- - Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
- - Promedio de los pagos que realizó un pasajero.
-
 ```sql
- -- 1
     SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
     FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
     GROUP BY c.nombre
-    
- -- 2
-    SELECT * FROM PROFESOR WHERE fecha_nacimiento >= '1980-01-01' and  fecha_nacimiento <= '1989-12-31'
- -- 3 - MySQL - ORACLE - PostgreSQL
-    SELECT * FROM PROFESOR WHERE extract( year FROM fecha_nacimiento) between 1980 and 1989
- -- 3 - MySQL - ORACLE - PostgreSQL
-    SELECT * FROM PROFESOR WHERE extract( year FROM fecha_nacimiento) between 1980 and 1989
-```
+```    
+ - Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
+```sql
+    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
+    FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
+    GROUP BY c.nombre
+```    
+ - Promedio de los pagos que realizó un pasajero.
+```sql
+    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
+    FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
+    GROUP BY c.nombre
+```    
