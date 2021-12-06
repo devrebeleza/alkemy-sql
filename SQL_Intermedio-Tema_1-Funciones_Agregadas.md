@@ -30,21 +30,20 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
 4- Escriba las siguientes consultas:
  - Cantidad de pasajeros por país
 ```sql
-    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
+    SELECT c.nombre pais, count(idpasajero) as 'cantidad_pasajeros'
     FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
     GROUP BY c.nombre
 ```    
  - Suma de todos los pagos realizados
 ```sql
-    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
-    FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
-    GROUP BY c.nombre
+    SELECT SUM(monto + impuesto) as 'total_pagos'
+    FROM PAGO
 ```    
  - Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
 ```sql
-    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
-    FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
-    GROUP BY c.nombre
+    SELECT p.idpasajero, ROUND(SUM(monto + impuesto),2) as 'total_pagos_pasajero'
+    FROM PASAJERO p inner join PAGO f on p.idpasajero = c.idpasajero
+    GROUP BY p.idpasajero
 ```    
  - Promedio de los pagos que realizó un pasajero.
 ```sql
