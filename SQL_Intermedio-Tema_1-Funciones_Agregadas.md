@@ -42,12 +42,12 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
  - Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
 ```sql
     SELECT p.idpasajero, ROUND(SUM(monto + impuesto),2) as 'total_pagos_pasajero'
-    FROM PASAJERO p inner join PAGO f on p.idpasajero = c.idpasajero
+    FROM PASAJERO p inner join PAGO f on p.idpasajero = f.idpasajero
     GROUP BY p.idpasajero
 ```    
  - Promedio de los pagos que realizó un pasajero.
 ```sql
     SELECT p.idpasajero, ROUND(AVG(monto + impuesto),2) as 'promedio_pagos_pasajero'
-    FROM PASAJERO p inner join PAGO f on p.idpasajero = c.idpasajero
+    FROM PASAJERO p inner join PAGO f on p.idpasajero = f.idpasajero
     GROUP BY p.idpasajero
 ```    
