@@ -15,10 +15,12 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
     ORDER BY fecha_nacimiento
   ```
 2- Escriba una consulta para saber, de la tabla PROFESOR, el salario mínimo de los profesores nacidos en la década del 80.
+![Tabla](https://lh5.googleusercontent.com/zJIEvMS6oC-tCp-SJC3p0H9-VtNkiQIdYlpufSh4CpjCt6owniilN20rhknlOnHK0K3JGseWYrIF2js_zcm0ZmTlzDtoT7At8s9x1p944_g_0hoZxWdA37ccKS9GKCc7bOC8gDQ)
  ```sql 
     SELECT * from PROFESOR WHERE salario >= 65000;
  ```
 3- Para el siguiente modelo relacional.   
+![Tabla](https://lh4.googleusercontent.com/3gu9oBjE6bgmxXbWnMPj0E4jpGiIXDVcpqNdY7Dn54yS-sPb2nes8peGjq82bpF-wHJ-iU9P68ofIFUGEJFwU2E6fheNHkbKwt9QMuUmWcVa3sW4zLDaofcZozEAGaJnEGZFAYg)
 ```sql
  --opción 1
     SELECT * FROM PROFESOR WHERE fecha_nacimiento BETWEEN '1980-01-01' and '1989-12-31'
