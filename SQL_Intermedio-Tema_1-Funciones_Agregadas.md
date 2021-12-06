@@ -10,16 +10,19 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
 1- Escriba una consulta para saber cuántos estudiantes son de la carrera Mecánica.
 ![Tabla](https://lh4.googleusercontent.com/5XyplRSIhDmN82eEQXRCCwK3kzqt6sSppGBjq66uOm2m_p-53a46HWY_fTcER4asNJI5v7gf5W9rHsGiCwydwohCkm3O6lLUmDQw_hxAGIjIEY8xljcamXn9EjRE_H99xV-01X4)
   ```sql
-    SELECT count(legajo) cantidad_estudiantes_mecanica
-    FROM PROFESOR
-    WHERE carrera = 'Mecánica'
+    SELECT COUNT(legajo) cantidad_estudiantes_mecanica
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
   ```
   
 2- Escriba una consulta para saber, de la tabla PROFESOR, el salario mínimo de los profesores nacidos en la década del 80.
 ![Tabla](https://lh5.googleusercontent.com/zJIEvMS6oC-tCp-SJC3p0H9-VtNkiQIdYlpufSh4CpjCt6owniilN20rhknlOnHK0K3JGseWYrIF2js_zcm0ZmTlzDtoT7At8s9x1p944_g_0hoZxWdA37ccKS9GKCc7bOC8gDQ)
  ```sql 
-    SELECT * from PROFESOR WHERE salario >= 65000;
+    SELECT MIN(salario) salario_minimo_profesor
+    FROM PROFESOR
+    WHERE extract( year FROM fecha_nacimiento) between 1980 and 1989;
  ```
+ 
 3- Para el siguiente modelo relacional.   
 ![Tabla](https://lh4.googleusercontent.com/3gu9oBjE6bgmxXbWnMPj0E4jpGiIXDVcpqNdY7Dn54yS-sPb2nes8peGjq82bpF-wHJ-iU9P68ofIFUGEJFwU2E6fheNHkbKwt9QMuUmWcVa3sW4zLDaofcZozEAGaJnEGZFAYg)
 ```sql
