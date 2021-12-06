@@ -31,10 +31,10 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
 ```
 
 4- Escriba las siguientes consultas:
-Cantidad de pasajeros por país
-Suma de todos los pagos realizados
-Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
-Promedio de los pagos que realizó un pasajero.
+ - Cantidad de pasajeros por país
+ - Suma de todos los pagos realizados
+ - Suma de todos los pagos que realizó un pasajero. El monto debe aparecer con dos decimales.
+ - Promedio de los pagos que realizó un pasajero.
 ```sql
     SELECT * FROM PROFESOR LIMIT 5;
 ```
