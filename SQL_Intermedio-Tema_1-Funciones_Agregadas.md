@@ -47,7 +47,7 @@ El objetivo de este ejercicio es poder hacer consultas que obtengan datos en for
 ```    
  - Promedio de los pagos que realizó un pasajero.
 ```sql
-    SELECT count(idpasajero) as 'cantidad_pasajeros', c.nombre pais
-    FROM PASAJERO p inner join PAIS c on p.idpais = c.idpais
-    GROUP BY c.nombre
+    SELECT p.idpasajero, ROUND(avg(monto + impuesto),2) as 'promedio_pagos_pasajero'
+    FROM PASAJERO p inner join PAGO f on p.idpasajero = c.idpasajero
+    GROUP BY p.idpasajero
 ```    
