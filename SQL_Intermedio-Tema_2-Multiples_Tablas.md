@@ -25,12 +25,12 @@ Escriba la siguiente información:
 3- Nombre, apellido y cursos que dicta cada profesor
  ```sql
     SELECT p.nombre, p.apellido, c.nombre as curso_dicta
-    FROM PROFESOR p INNER JOIN INNER JOIN CURSO c ON c.PROFESOR_id = p.id;
+    FROM PROFESOR p INNER JOIN CURSO c ON c.PROFESOR_id = p.id;
   ```
 4- Nombre, apellido y cursos que dicta cada profesor, ordenados por el nombre del curso
  ```sql
     SELECT p.nombre, p.apellido, c.nombre as curso_dicta
-    FROM PROFESOR p INNER JOIN INNER JOIN CURSO c ON c.PROFESOR_id = p.id
+    FROM PROFESOR p INNER JOIN CURSO c ON c.PROFESOR_id = p.id
     ORDER BY c.nombre;
   ```
 5- Cupo disponible para cada curso (Si el cupo es de 35 estudiantes y hay 5 inscriptos, el cupo disponible será 30)
