@@ -10,11 +10,41 @@
 Escriba la siguiente información:
 
 1- Nombre, apellido y cursos que realiza cada estudiante
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 2- Nombre, apellido y cursos que realiza cada estudiante, ordenados por el nombre del curso
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 3- Nombre, apellido y cursos que dicta cada profesor
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 4- Nombre, apellido y cursos que dicta cada profesor, ordenados por el nombre del curso
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 5- Cupo disponible para cada curso (Si el cupo es de 35 estudiantes y hay 5 inscriptos, el cupo disponible será 30)
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 6- Cursos cuyo cupo disponible sea menor a 10
+ ```sql
+    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
+    FROM ESTUDIANTE
+    WHERE carrera = 'Mecánica';
+  ```
 
 1- Escriba una consulta para saber cuántos estudiantes son de la carrera Mecánica.
 ![Tabla](https://lh4.googleusercontent.com/5XyplRSIhDmN82eEQXRCCwK3kzqt6sSppGBjq66uOm2m_p-53a46HWY_fTcER4asNJI5v7gf5W9rHsGiCwydwohCkm3O6lLUmDQw_hxAGIjIEY8xljcamXn9EjRE_H99xV-01X4)
