@@ -35,7 +35,7 @@ Escriba la siguiente información:
   ```
 5- Cupo disponible para cada curso (Si el cupo es de 35 estudiantes y hay 5 inscriptos, el cupo disponible será 30)
  ```sql
-   SELECT c.codigo as curso, c.cupo - cant_inscriptos as cupo_disponible
+   SELECT c.codigo as curso, c.cupo - cantidad_inscriptos as cupo_disponible
    FROM CURSO c INNER JOIN 
    (SELECT COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
    ON c.codigo = i.CURSO_codigo
@@ -44,10 +44,10 @@ Escriba la siguiente información:
  
 6- Cursos cuyo cupo disponible sea menor a 10
  ```sql
-    SELECT c.codigo as curso, c.cupo - cant_inscriptos as cupo_disponible
+    SELECT c.codigo as curso, c.cupo - cantidad_inscriptos as cupo_disponible
     FROM CURSO c INNER JOIN 
     (SELECT COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
     ON c.codigo = i.CURSO_codigo
     GROUP BY c.codigo
-    HAVING c.cupo - cant_inscriptos < 10;
+    HAVING c.cupo - cantidad_inscriptos < 10;
   ```
