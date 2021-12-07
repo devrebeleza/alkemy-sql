@@ -11,9 +11,9 @@ Escriba la siguiente información:
 
 1- Nombre, apellido y cursos que realiza cada estudiante
  ```sql
-    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
-    FROM ESTUDIANTE
-    WHERE carrera = 'Mecánica';
+    SELECT p.nombre, p.apellido, c.nombre as curso
+    FROM ESTUDIANTE as p inner join INSCRIPCION i ON i.ESTUDIANTE_legajo = p.legajo
+    inner join CURSO c ON c.codigo = i.CURSO_codigo;
   ```
 2- Nombre, apellido y cursos que realiza cada estudiante, ordenados por el nombre del curso
  ```sql
