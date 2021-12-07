@@ -27,6 +27,10 @@ b- Inserte datos siguiendo un orden no secuencial para el id.
 ```
 
 c- Consulte los datos para visualizar el orden de registros.
+```sql
+   SELECT * FROM PERSONA
+  ```
+  
 | id             | NOMBRE    | 
 |-------------------|-------------|
 |  3   | Renzo    |
