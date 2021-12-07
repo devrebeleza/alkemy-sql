@@ -34,5 +34,16 @@ Escriba la siguiente información:
     ORDER BY c.nombre;
   ```
 5- Cupo disponible para cada curso (Si el cupo es de 35 estudiantes y hay 5 inscriptos, el cupo disponible será 30)
+ ```sql
+    SELECT c.codigo as curso, c.cupo - (COUNT(i.numero)) as cupo_disponible
+    FROM CURSO c INNER JOIN INSCRIPCION i ON c.codigo = i.CURSO_codigo
+    GROUP BY c.codigo;
+  ```
  
 6- Cursos cuyo cupo disponible sea menor a 10
+ ```sql
+    SELECT c.codigo as curso, c.cupo - (COUNT(i.numero)) as cupo_disponible
+    FROM CURSO c INNER JOIN INSCRIPCION i ON c.codigo = i.CURSO_codigo
+    GROUP BY c.codigo
+    HAVING c.cupo - (COUNT(i.numero)) < 10;
+  ```
