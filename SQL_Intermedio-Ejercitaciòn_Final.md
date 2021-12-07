@@ -10,7 +10,7 @@ Si bien es difícil cubrir todos los casos posibles para las consultas, esta es 
 A continuación, dejamos una última evaluación a modo de cierre.
 
 Teniendo en cuenta el modelo relacional utilizado a lo largo de la cápsula: 
-[![table](https://lh3.googleusercontent.com/1AOeM9pWbnWnkBLNN2pvJgbB2RdfEKCo7ijDthWY65iR_X4iCl2ukYXKFPeoaIR8zEHjQkc3tEyG4pF78v98L_d18onER1fK19_8whhNkgpQotCkcPtRhHvAfcCCR86hekx2mryl=s0)
+![table](https://lh3.googleusercontent.com/1AOeM9pWbnWnkBLNN2pvJgbB2RdfEKCo7ijDthWY65iR_X4iCl2ukYXKFPeoaIR8zEHjQkc3tEyG4pF78v98L_d18onER1fK19_8whhNkgpQotCkcPtRhHvAfcCCR86hekx2mryl=s0)
 
 En el recuadro que aparece debajo, coloque la URL correspondiente al repo con las respuestas. 
 
@@ -22,9 +22,9 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
   ```
 2- Escriba una consulta que devuelva el legajo y la cantidad de cursos de los estudiantes que realizan más de un curso.
 ```sql
-    SELECT count(distinct id) as cantidad_profesores_dictan_de_noche
-    FROM PROFESOR p
-    WHERE (SELECT count(*) FROM CURSO WHERE turno = 'Noche' and c.PROFESOR_id = p.id) > 1;
+    SELECT ESTUDIANTE_legajo, count(1) as cantidad_cursos
+    FROM INSCRIPCION I
+    GROUP BY ESTUDIANTE_legajo;
   ```
 3- Escriba una consulta que devuelva la información de los estudiantes que no realizan ningún curso.
 ```sql
