@@ -19,19 +19,20 @@ b- Inserte datos siguiendo un orden no secuencial para el id.
     INSERT INTO PERSONA (ID,NOMBRE) VALUES (
     '3',  'Renzo'); 
     INSERT INTO PERSONA (ID,NOMBRE) VALUES (
-    '2',  'Renzo'); 
+    '2',  'Adrian'); 
     INSERT INTO PERSONA (ID,NOMBRE) VALUES (
-    '1',  'Renzo'); 
+    '1',  'Valeria'); 
     INSERT INTO PERSONA (ID,NOMBRE) VALUES (
-    '5',  'Renzo'); 
+    '5',  'Agustina'); 
 ```
 
 c- Consulte los datos para visualizar el orden de registros.
-| Juego             | Compañia    | Clasificacion | Precio (MXN) |
-|-------------------|-------------|---------------|--------------|
-| Animal Crossing   | Nintendo    | E             | 1600         |
-| Persona 5         | Atlus       | T             | 1500         |
-| Final Fantasy VII | Square Enix | T             | 1500         |
-| Fortnite          | Epic Games  | M             | 0            |
+| id             | NOMBRE    | 
+|-------------------|-------------|
+|  3   | Renzo    |
+|  2         | Adrian       |
+|  1 | Valeria |
+|  5          | Agustina  |
+
 d- Agregue una clave primaria para el campo id.
 e- Consulte los datos para visualizar el orden de registros.
