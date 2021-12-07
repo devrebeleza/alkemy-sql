@@ -28,7 +28,7 @@ b- Inserte datos siguiendo un orden no secuencial para el id.
 
 c- Consulte los datos para visualizar el orden de registros.
 ```sql
-   SELECT * FROM PERSONA
+   SELECT * FROM PERSONA;
   ```
   
 | id             | NOMBRE    | 
@@ -39,4 +39,18 @@ c- Consulte los datos para visualizar el orden de registros.
 |  5          | Agustina  |
 
 d- Agregue una clave primaria para el campo id.
+```sql   
+   ALTER TABLE PERSONA
+   ADD CONSTRAINT PK_Persona PRIMARY KEY (id);
+  ```
 e- Consulte los datos para visualizar el orden de registros.
+```sql
+   SELECT * FROM PERSONA;
+  ```
+  
+| id             | NOMBRE    | 
+|-------------------|-------------|
+|  1 | Valeria |
+|  2         | Adrian       |
+|  3   | Renzo    |
+|  5          | Agustina  |
