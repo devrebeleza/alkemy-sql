@@ -37,7 +37,7 @@ Escriba la siguiente información:
  ```sql
    SELECT c.codigo as curso, c.cupo - cant_inscriptos as cupo_disponible
    FROM CURSO c INNER JOIN 
-   (SELECT (COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
+   (SELECT COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
    ON c.codigo = i.CURSO_codigo
    GROUP BY c.codigo;
   ```
@@ -46,7 +46,7 @@ Escriba la siguiente información:
  ```sql
     SELECT c.codigo as curso, c.cupo - cant_inscriptos as cupo_disponible
     FROM CURSO c INNER JOIN 
-    (SELECT (COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
+    (SELECT COUNT(i.numero) as cant_inscriptos, CURSO_codigo FROM INSCRIPCION i GROUP BY CURSO_codigo) i 
     ON c.codigo = i.CURSO_codigo
     GROUP BY c.codigo
     HAVING c.cupo - cant_inscriptos < 10;
