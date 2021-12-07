@@ -35,7 +35,17 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
   ```
 4- Escriba para cada tabla, los index (incluyendo su tipo) que tiene cada una.
 ```sql
-     
+    PROFESOR
+        INDICE CLOUSTERIZADO PRIMARY KEY (id)        
+    CURSO
+        INDICE CLOUSTERIZADO PRIMARY KEY (codigo)
+        INDICE NO CLOUSTERIZADO FOREIGN KEY (PROFESOR_id)
+    INSCRIPCION
+        INDICE CLOUSTERIZADO PRIMARY KEY (numero)
+        INDICE NO CLOUSTERIZADO FOREIGN KEY (CURSO_codigo)
+                                FOREIGN KEY (ESTUDIANTE_legajo)
+    ESTUDIANTE    
+        INDICE CLOUSTERIZADO PRIMARY KEY (legajo)        
   ```
 5- Liste toda la información sobre los estudiantes que realizan cursos con los profesores de apellido “Pérez” y “Paz”.
 ```sql
@@ -45,7 +55,14 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
                        WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c 
                                               INNER JOIN PROFESOR p 
                                               ON c.PROFESOR_id = p.id
-                                              WHERE p.apellido like '%Pérez%' or p.apellido like '%Paz%'
+                                              WHERE p.apellido like '%Pérez%'
                                               )
-                       );
+                       )
+    AND e.legajo IN (SELECT ESTUDIANTE_legajo FROM INSCRIPCION i 
+                       WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c 
+                                              INNER JOIN PROFESOR p 
+                                              ON c.PROFESOR_id = p.id
+                                              WHERE p.apellido like '%Paz%'
+                                              )
+                       );                       
   ```
