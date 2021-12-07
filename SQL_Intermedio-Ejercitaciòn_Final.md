@@ -45,6 +45,7 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
                        WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c 
                                               INNER JOIN PROFESOR p 
                                               ON c.PROFESOR_id = p.id
+                                              WHERE p.apellido like '%Pérez%' or p.apellido like '%Paz%'
                                               )
                        );
   ```
