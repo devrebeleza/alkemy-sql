@@ -16,21 +16,22 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
 
 1- Escriba una consulta que devuelva el legajo y la cantidad de cursos que realiza cada estudiante.
 ```sql
-    SELECT count(distinct id) as cantidad_profesores_dictan_de_noche
-    FROM PROFESOR p
-    WHERE (SELECT count(*) FROM CURSO WHERE turno = 'Noche' and c.PROFESOR_id = p.id) > 1;
-  ```
-2- Escriba una consulta que devuelva el legajo y la cantidad de cursos de los estudiantes que realizan más de un curso.
-```sql
     SELECT ESTUDIANTE_legajo, count(1) as cantidad_cursos
     FROM INSCRIPCION I
     GROUP BY ESTUDIANTE_legajo;
   ```
+2- Escriba una consulta que devuelva el legajo y la cantidad de cursos de los estudiantes que realizan más de un curso.
+```sql
+    SELECT ESTUDIANTE_legajo , count(1) as cantidad_cursos
+    FROM INSCRIPCION I
+    GROUP BY ESTUDIANTE_legajo
+    HAVING count(1) > 1;
+  ```
 3- Escriba una consulta que devuelva la información de los estudiantes que no realizan ningún curso.
 ```sql
-    SELECT count(distinct id) as cantidad_profesores_dictan_de_noche
-    FROM PROFESOR p
-    WHERE (SELECT count(*) FROM CURSO WHERE turno = 'Noche' and c.PROFESOR_id = p.id) > 1;
+    SELECT *
+    FROM ESTUDIANTE e
+    WHERE e.legajo NOT IN (SELECT ESTUDIANTE_legajo FROM INSCRIPCION I);
   ```
 4- Escriba para cada tabla, los index (incluyendo su tipo) que tiene cada una.
 ```sql
