@@ -35,13 +35,16 @@ En el recuadro que aparece debajo, coloque la URL correspondiente al repo con la
   ```
 4- Escriba para cada tabla, los index (incluyendo su tipo) que tiene cada una.
 ```sql
-    SELECT count(distinct id) as cantidad_profesores_dictan_de_noche
-    FROM PROFESOR p
-    WHERE (SELECT count(*) FROM CURSO WHERE turno = 'Noche' and c.PROFESOR_id = p.id) > 1;
+     
   ```
 5- Liste toda la información sobre los estudiantes que realizan cursos con los profesores de apellido “Pérez” y “Paz”.
 ```sql
-    SELECT count(distinct id) as cantidad_profesores_dictan_de_noche
-    FROM PROFESOR p
-    WHERE (SELECT count(*) FROM CURSO WHERE turno = 'Noche' and c.PROFESOR_id = p.id) > 1;
+    SELECT *
+    FROM ESTUDIANTE e
+    WHERE e.legajo IN (SELECT ESTUDIANTE_legajo FROM INSCRIPCION i 
+                       WHERE CURSO_codigo IN (SELECT codigo FROM CURSO c 
+                                              INNER JOIN PROFESOR p 
+                                              ON c.PROFESOR_id = p.id
+                                              )
+                       );
   ```
