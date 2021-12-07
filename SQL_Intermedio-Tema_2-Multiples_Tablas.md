@@ -11,21 +11,21 @@ Escriba la siguiente información:
 
 1- Nombre, apellido y cursos que realiza cada estudiante
  ```sql
-    SELECT p.nombre, p.apellido, c.nombre as curso
+    SELECT p.nombre, p.apellido, c.nombre as curso_asiste
     FROM ESTUDIANTE p INNER JOIN INSCRIPCION i ON i.ESTUDIANTE_legajo = p.legajo
     INNER JOIN CURSO c ON c.codigo = i.CURSO_codigo;
   ```
 2- Nombre, apellido y cursos que realiza cada estudiante, ordenados por el nombre del curso
  ```sql
-    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
-    FROM ESTUDIANTE
-    WHERE carrera = 'Mecánica';
+    SELECT p.nombre, p.apellido, c.nombre as curso
+    FROM ESTUDIANTE p INNER JOIN INSCRIPCION i ON i.ESTUDIANTE_legajo = p.legajo
+    INNER JOIN CURSO c ON c.codigo = i.CURSO_codigo
+    ORDER BY c.nombre;
   ```
 3- Nombre, apellido y cursos que dicta cada profesor
  ```sql
-    SELECT COUNT(legajo) as 'cantidad_estudiantes_mecanica'
-    FROM ESTUDIANTE
-    WHERE carrera = 'Mecánica';
+    SELECT p.nombre, p.apellido, c.nombre as curso_dicta
+    FROM PROFESOR p INNER JOIN INNER JOIN CURSO c ON c.PROFESOR_id = p.id;
   ```
 4- Nombre, apellido y cursos que dicta cada profesor, ordenados por el nombre del curso
  ```sql
